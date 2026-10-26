@@ -1,0 +1,65 @@
+/* 전체 배경 */
+.book-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #f0f0f0;
+}
+
+/* 기본 속지 설정 */
+.page {
+  background-color: #fffaf0;
+  color: #333;
+  box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.05);
+  border: 1px solid #e0e0e0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* 표지 설정: 저장한 cover.jpg 이미지를 씌웁니다 */
+.page-cover {
+  background-image: url('/cover.jpg');
+  background-size: 100% 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  border: none;
+}
+
+/* 줄글 영역 설정 */
+.content-wrapper {
+  width: 80%;
+  margin-top: 50px;
+  text-align: center;
+}
+
+/* 리스트 스타일 (악보 줄 느낌) */
+.info-list {
+  list-style: none;
+  padding: 0;
+  margin-top: 30px;
+  text-align: left;
+}
+
+.info-list li {
+  border-bottom: 1.5px dashed #ccc;
+  /* 점선으로 줄글 구분 */
+  padding: 15px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.info-list .label {
+  font-weight: bold;
+  font-size: 14px;
+  color: #d17b9b;
+  /* 표지 톤에 맞춘 포인트 컬러 */
+}
+
+.info-list .desc {
+  font-size: 15px;
+  color: #555;
+  line-height: 1.4;
+}
