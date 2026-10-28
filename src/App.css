@@ -12,6 +12,7 @@ html {
   align-items: center;
   height: 100vh;
   width: 100vw;
+  position: relative;
 
   /* public 폴더에 넣은 bg.png를 배경으로 지정 */
   background-image: url('/bg.png');
@@ -108,4 +109,742 @@ html {
   /* 글씨 크기를 15px에서 13px로 축소 */
   color: #555;
   line-height: 1.3;
+}
+
+/* 스킬 섹션 스타일 */
+.skills-section {
+  margin-top: 15px;
+  /* 기존 25px에서 축소 */
+}
+
+.skill-category {
+  font-size: 13px;
+  /* 글꼴 크기 미세 축소 */
+  color: #d17b9b;
+  margin: 0 0 6px 0;
+  /* 태그와의 간격 축소 */
+  text-align: left;
+  border-bottom: 1.5px dashed #ccc;
+  padding-bottom: 5px;
+  /* 점선과 글씨 사이 여백 축소 */
+}
+
+/* 스킬 태그 컨테이너 */
+.skill-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  /* 태그 사이의 간격 축소 */
+  justify-content: flex-start;
+}
+
+/* 마스킹 테이프 느낌의 태그 기본 설정 */
+.skill-tag {
+  background-color: #fce4ec;
+  color: #d84374;
+  padding: 4px 10px;
+  /* 태그 자체의 상하좌우 크기 축소 */
+  font-size: 12px;
+  /* 태그 안의 글씨 크기 축소 */
+  font-weight: bold;
+  border-radius: 4px;
+  box-shadow: 2px 2px 0px rgba(0, 0, 0, 0.1);
+  transform: rotate(-2deg);
+}
+
+/* 태그 색상과 각도를 다르게 주어 다꾸 감성 추가 */
+.skill-tag:nth-child(even) {
+  transform: rotate(3deg);
+  background-color: #e3f2fd;
+  color: #1976d2;
+}
+
+.skill-tag:nth-child(3n) {
+  transform: rotate(-1deg);
+  background-color: #f1f8e9;
+  color: #388e3c;
+}
+
+.skill-category {
+  font-size: 14px;
+  color: #d17b9b;
+  margin: 0 0 10px 0;
+  text-align: left;
+  border-bottom: 1.5px dashed #ccc;
+  padding-bottom: 8px;
+}
+
+/* 스킬 태그 컨테이너 */
+.skill-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: flex-start;
+}
+
+/* 마스킹 테이프 느낌의 태그 기본 설정 */
+.skill-tag {
+  background-color: #fce4ec;
+  color: #d84374;
+  padding: 6px 14px;
+  font-size: 13px;
+  font-weight: bold;
+  border-radius: 4px;
+  box-shadow: 2px 2px 0px rgba(0, 0, 0, 0.1);
+  transform: rotate(-2deg);
+  /* 기본적으로 살짝 왼쪽으로 기울어짐 */
+}
+
+/* 태그 색상과 각도를 다르게 주어 다꾸 감성 추가 */
+.skill-tag:nth-child(even) {
+  transform: rotate(3deg);
+  background-color: #e3f2fd;
+  color: #1976d2;
+}
+
+.skill-tag:nth-child(3n) {
+  transform: rotate(-1deg);
+  background-color: #f1f8e9;
+  color: #388e3c;
+}
+
+/* CSS 전용 툴팁 스타일 */
+.tooltip-item {
+  position: relative;
+  cursor: help;
+}
+
+.css-tooltip {
+  display: none;
+  /* 평소에는 숨김 */
+  position: absolute;
+  top: 80%;
+  left: 10px;
+  background-color: #fff9c4;
+  padding: 15px;
+  border-radius: 4px;
+  width: 250px;
+  box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);
+  z-index: 100;
+  white-space: pre-wrap;
+  color: #333;
+  font-size: 13px;
+  line-height: 1.5;
+  transform: rotate(1deg);
+  /* 다꾸 감성 */
+  pointer-events: none;
+  /* 마우스 간섭 방지 */
+}
+
+/* 마우스를 올렸을 때만 보이게 함 */
+.tooltip-item:hover .css-tooltip {
+  display: block;
+}
+
+/* 픽셀 아바타 폴라로이드 스타일 */
+.polaroid-frame {
+  background-color: white;
+  padding: 8px 8px 20px 8px;
+  /* 액자 틀 두께 조절 */
+  box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.15);
+  width: 90px;
+  /* 액자 자체의 가로 크기를 아담하게 고정 */
+  height: 110px;
+  /* 세로 크기 고정 */
+  margin: 10px auto 15px auto;
+  /* 중앙 정렬 및 본문과의 간격 */
+  transform: rotate(-3deg);
+  position: relative;
+  display: block;
+  /* 절대 배경으로 튀어나가지 않도록 블록화 */
+  z-index: 10;
+  /* 다른 요소보다 아주 살짝 위에만 오도록 설정 */
+}
+
+.polaroid-frame img {
+  width: 100% !important;
+  /* 액자 크기(90px)에 무조건 맞춤 */
+  height: 80px !important;
+  /* 아래쪽 손글씨 쓸 여백을 남기고 이미지 영역 고정 */
+  object-fit: contain !important;
+  /* 이미지가 잘리거나 늘어나지 않고 쏙 들어가게 함 */
+  image-rendering: pixelated;
+  /* 도트가 흐려지지 않고 선명하게 */
+  background-color: #fce4ec;
+  /* 혹시 모를 로딩 대기용 연분홍 배경 */
+  border: 1px solid #eee;
+  display: block;
+}
+
+/* 제목 아래 여백 좁히기 */
+.content-wrapper h2 {
+  margin-bottom: 5px !important;
+}
+
+/* 사진 컨테이너 여백 대폭 축소 */
+.photo-container {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin: 5px 0 10px 0 !important;
+}
+
+/* 폴라로이드 액자 크기 15% 축소 */
+.polaroid-frame {
+  background-color: white;
+  padding: 6px 6px 18px 6px !important;
+  box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.15);
+  width: 70px !important;
+  height: 90px !important;
+  position: relative;
+  z-index: 10;
+}
+
+.avatar-frame {
+  transform: rotate(-4deg);
+}
+
+.real-photo-frame {
+  transform: rotate(3deg);
+}
+
+/* 액자 속 이미지 크기도 비례해서 축소 */
+.polaroid-frame img {
+  width: 100% !important;
+  height: 65px !important;
+  display: block;
+  border: 1px solid #eee;
+}
+
+.avatar-frame img {
+  object-fit: contain !important;
+  image-rendering: pixelated;
+  background-color: #fce4ec;
+}
+
+.real-photo-frame img {
+  object-fit: cover !important;
+  background-color: #e3f2fd;
+}
+
+/* 반투명 마스킹 테이프 크기 축소 */
+.polaroid-frame::before {
+  content: "";
+  position: absolute;
+  top: -6px;
+  left: 50%;
+  width: 40px !important;
+  height: 14px !important;
+  border-right: 1.5px dashed rgba(0, 0, 0, 0.1);
+  border-left: 1.5px dashed rgba(0, 0, 0, 0.1);
+  z-index: 11;
+}
+
+.avatar-frame::before {
+  background-color: rgba(209, 123, 155, 0.5);
+  transform: translateX(-50%) rotate(4deg);
+}
+
+.real-photo-frame::before {
+  background-color: rgba(100, 181, 246, 0.5);
+  transform: translateX(-50%) rotate(-3deg);
+}
+
+/* ------------- 텍스트 목록 크기 및 여백 강제 축소 ------------- */
+.info-list li {
+  margin-bottom: 5px !important;
+  padding-bottom: 5px !important;
+}
+
+.info-list .label {
+  font-size: 13px !important;
+  margin-bottom: 2px !important;
+}
+
+.info-list .desc {
+  font-size: 12px !important;
+  line-height: 1.3 !important;
+}
+
+/* 맨 마지막 항목(활동내역)의 메모지는 잘리지 않게 위로 뜨도록 방향 반전 */
+.info-list li:last-child .css-tooltip {
+  top: auto !important;
+  /* 기존에 아래로 향하던 설정 무시 */
+  bottom: 80% !important;
+  /* 항목을 기준으로 위쪽으로 띄움 */
+}
+
+/* 다이어리 속지 (모눈종이) 배경 패턴 */
+.page {
+  /* 기본 미색 배경 위에 연한 핑크빛 모눈종이 선 긋기 */
+  background-color: #fcfcfc !important;
+  background-image:
+    linear-gradient(rgba(209, 123, 155, 0.15) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(209, 123, 155, 0.15) 1px, transparent 1px) !important;
+  background-size: 18px 18px !important;
+  /* 모눈 한 칸의 크기 (정사각형) */
+}
+
+.page {
+  /* 본인이 원래 설정해두신 배경 이미지 코드는 그대로 유지해 주세요! */
+  background-image: url('cover.png');
+  /* ... 기타 본인 설정 코드들 ... */
+
+  /* 🌟 이 한 줄을 추가! 🌟 */
+  /* 이미지 뒤에 든든한 고체 색상을 깔아주어 넘길 때 투명해지지 않게 막아줍니다. */
+  background-color: #ffffff;
+  /* 종이 이미지와 가장 비슷한 단색(흰색 또는 미색 등)으로 맞춰주시면 더 자연스럽습니다. */
+}
+
+/* 앞표지 전용: 별빛 패턴 이미지 꽉 채우기 */
+.front-cover {
+  background-image: url('/cover.jpg') !important;
+  background-size: cover !important;
+  background-position: center !important;
+  background-color: #f7d2d9 !important;
+}
+
+/* 뒷표지 전용: 이미지 제거 후 핑크 단색 적용 및 기준점 설정 */
+.back-cover {
+  background-image: none !important;
+  background-color: #f7d2d9 !important;
+  position: relative;
+  /* 내부 요소 배치를 위한 기준점 */
+}
+
+/* 뒷표지 우측 하단 정렬 (z-index 추가) */
+.back-cover-content {
+  position: absolute;
+  bottom: 40px;
+  right: 35px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 12px;
+  z-index: 50 !important;
+  /* 🌟 배경에 묻히지 않게 맨 위로 끌어올림 */
+}
+
+/* 흰색 바코드 스티커 배경 */
+.barcode-box {
+  background-color: white;
+  padding: 8px 12px;
+  border-radius: 3px;
+  box-shadow: 1px 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* CSS 그라데이션으로 진짜 같은 바코드 패턴 그리기 */
+.barcode-lines {
+  width: 130px;
+  height: 35px;
+  background-image: repeating-linear-gradient(to right,
+      #333 0, #333 2px,
+      transparent 2px, transparent 4px,
+      #333 4px, #333 5px,
+      transparent 5px, transparent 8px,
+      #333 8px, #333 12px,
+      transparent 12px, transparent 14px,
+      #333 14px, #333 15px,
+      transparent 15px, transparent 19px);
+  margin-bottom: 6px;
+}
+
+/* 바코드 아래 일련번호 (타자기 폰트) */
+.barcode-text {
+  font-size: 10px;
+  font-family: 'Courier New', Courier, monospace;
+  color: #333;
+  text-align: center;
+  letter-spacing: 1px;
+}
+
+/* 퍼블리셔(깃허브 주소) 정보 */
+.publisher-info {
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 12px;
+  color: #666;
+  letter-spacing: 0.5px;
+}
+
+/* 표지 옆 안내 문구 배치 */
+.cover-hint {
+  position: absolute;
+  left: 10%;
+  /* 화면 왼쪽 공간에 배치 */
+  top: 50%;
+  text-align: right;
+  z-index: 100;
+  pointer-events: none;
+  /* 문구가 마우스 드래그를 방해하지 않도록 설정 */
+  animation: floatArrow 1.5s infinite;
+}
+
+.hint-title {
+  font-size: 38px;
+  color: #d17b9b;
+  margin-bottom: 12px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.hint-arrow {
+  font-size: 15px;
+  color: #666;
+  background-color: white;
+  padding: 8px 16px;
+  border-radius: 20px;
+  display: inline-block;
+  box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+/* 좌우로 움직이는 애니메이션 */
+@keyframes floatArrow {
+
+  0%,
+  100% {
+    transform: translate(0, -50%);
+  }
+
+  50% {
+    transform: translate(-10px, -50%);
+  }
+}
+
+/* 안내 문구 기본 설정 및 스르륵 사라지는 효과 */
+.cover-hint {
+  position: absolute;
+  left: 15%;
+  top: 50%;
+  transform: translateY(-50%);
+  text-align: right;
+  z-index: 100;
+  pointer-events: none;
+  /* 책을 넘길 때 마우스 클릭을 방해하지 않도록 설정 */
+  transition: opacity 0.4s ease-in-out;
+  /* 🌟 이 줄이 있어야 스르륵 부드럽게 사라집니다 */
+}
+
+/* =========================================
+   우측 인덱스 책갈피 탭 스타일
+========================================= */
+/* =========================================
+   책에 꽂힌 입체적인 인덱스 탭 스타일
+========================================= */
+.bookmark-tabs {
+  position: absolute;
+  /* 책의 오른쪽 테두리 위치에 정확히 걸치도록 마이너스 값 조정 */
+  right: calc(50% - 400px);
+  top: 25%;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  z-index: 50;
+  pointer-events: auto;
+}
+
+.tab {
+  color: #555;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 13px;
+  font-weight: bold;
+  padding: 8px 16px 8px 12px;
+  /* 왼쪽은 책 안쪽으로 들어가 보이도록 둥글게 처리하지 않고, 오른쪽만 둥글게 만듦 */
+  border-radius: 4px 12px 12px 4px;
+  /* 책 표지 뒤로 살짝 파고든 입체감을 주는 그림자 */
+  box-shadow: -2px 2px 5px rgba(0, 0, 0, 0.15);
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+  /* 탭 왼쪽 끝에 책에 박힌 듯한 고정 핀/선 느낌의 진한 테두리 */
+  border-left: 6px solid;
+  /* 책 표지 밑으로 탭의 왼쪽 끝이 살짝 묻히는 효과를 위해 음수 마진 사용 */
+  margin-left: -8px;
+}
+
+/* 탭에 마우스를 올렸을 때 오른쪽으로 톡 튀어나오는 효과 */
+.tab:hover {
+  transform: translateX(6px);
+}
+
+/* 탭별 색상 지정 (진한 왼쪽 테두리와 부드러운 배경색 조합) */
+.tab:nth-child(1) {
+  background-color: #ffccd5;
+  border-left-color: #ff4d6d;
+}
+
+.tab:nth-child(2) {
+  background-color: #ffe5ec;
+  border-left-color: #ff758c;
+}
+
+.tab:nth-child(3) {
+  background-color: #e0fbfc;
+  border-left-color: #3dccc7;
+}
+
+.tab:nth-child(4) {
+  background-color: #fefae0;
+  border-left-color: #dda15e;
+}
+
+/* =========================================
+   페이지 내부에서 우측 밖으로 튀어나오는 인덱스 탭
+========================================= */
+.content-wrapper {
+  position: relative;
+  /* 탭 위치 기준점을 잡기 위해 필수 */
+}
+
+.page-tab {
+  position: absolute;
+  right: -45px;
+  /* 페이지 오른쪽 테두리 밖으로 강제로 튀어나오게 함 */
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 13px;
+  font-weight: bold;
+  padding: 8px 14px 8px 12px;
+  border-radius: 0 10px 10px 0;
+  box-shadow: 2px 3px 6px rgba(0, 0, 0, 0.15);
+  cursor: pointer;
+  transition: transform 0.2s ease-in-out;
+  border-left: 5px solid;
+}
+
+.page-tab:hover {
+  transform: translateX(4px);
+}
+
+/* 각각의 탭 위치와 색상 설정 (세로 간격 조절 가능) */
+.profile-tab {
+  top: 150px;
+  background-color: #ffe5ec;
+  border-left-color: #ff758c;
+  color: #555;
+}
+
+.projects-tab {
+  top: 210px;
+  background-color: #e0fbfc;
+  border-left-color: #3dccc7;
+  color: #555;
+}
+
+.skills-tab {
+  top: 270px;
+  background-color: #fefae0;
+  border-left-color: #dda15e;
+  color: #555;
+}
+
+/* =========================================
+   각 페이지 우측 끝에 붙는 책갈피 탭 스타일
+========================================= */
+.content-wrapper {
+  position: relative;
+  height: 100%;
+}
+
+/* 방법 2: 우측 모서리에 얇게 붙는 세로형 인덱스 */
+.content-wrapper {
+  position: relative;
+  height: 100%;
+}
+
+
+.profile-tab {
+  top: 40px;
+  background-color: #ffe5ec;
+  border-right-color: #ff758c;
+  color: #555;
+}
+
+.projects-tab {
+  top: 130px;
+  background-color: #e0fbfc;
+  border-right-color: #3dccc7;
+  color: #555;
+}
+
+.skills-tab {
+  top: 220px;
+  background-color: #fefae0;
+  border-right-color: #dda15e;
+  color: #555;
+}
+
+/* =========================================
+   책 바깥으로 삐져나오는 세로형 인덱스 탭 설정
+   (App.css 맨 아래에 그대로 붙여넣으세요)
+========================================= */
+
+/* 1. 페이지 밖으로 튀어나온 탭이 잘리지 않도록 강제 설정 */
+.page,
+.stf__wrapper,
+.stf__block {
+  overflow: visible !important;
+}
+
+.content-wrapper {
+  position: relative;
+  height: 100%;
+}
+
+/* 2. 오른쪽 경계선 바깥에 꽂히는 세로형 슬림 탭 */
+/* =========================================
+   책갈피 탭들을 책 오른쪽 옆구리에 완벽 고정
+========================================= */
+
+/* 1. 페이지 밖으로 튀어나온 요소가 잘리지 않도록 설정 */
+/* 페이지 바깥으로 튀어나온 탭이 잘리지 않도록 설정 */
+.page,
+.stf__wrapper,
+.stf__block {
+  overflow: visible !important;
+}
+
+.content-wrapper {
+  position: relative;
+  height: 100%;
+}
+
+/* 🌟 책을 넘겨도 위치가 흔들리지 않게 고정되는 탭 스타일 */
+/* 페이지 오버플로우 설정 유지 */
+.page,
+.stf__wrapper,
+.stf__block {
+  overflow: visible !important;
+}
+
+/* 🌟 안쪽 상자(.content-wrapper)를 기준점으로 삼되, 
+   높이가 짧아져도 탭들이 위로 딸려 올라가지 않도록 최소 높이와 고정 위치를 부여합니다 */
+.content-wrapper {
+  position: relative;
+  height: 100%;
+  min-height: 560px;
+  /* 상자가 너무 찌그러지지 않도록 최소 높이 고정 */
+}
+
+/* 탭 공통 스타일 */
+/* 페이지 잘림 방지 유지 */
+.page,
+.stf__wrapper,
+.stf__block {
+  overflow: visible !important;
+}
+
+/* 🌟 책갈피를 책 몸체(.book-container)의 오른쪽 바깥에 화면 기준(fixed)으로 영구 고정 */
+.book-container {
+  position: relative;
+}
+
+.page-tab {
+  position: fixed !important;
+  /* 화면 기준으로 절대 안 움직이게 고정 */
+  right: calc(50% - 400px - 66px);
+  /* 책의 오른쪽 테두리 위치에 정확히 맞춤 */
+  writing-mode: vertical-rl;
+  text-orientation: mixed;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 12px;
+  font-weight: bold;
+  letter-spacing: 1.5px;
+  padding: 14px 6px;
+  border-radius: 0 8px 8px 0;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.12);
+  border-left: 4px solid;
+  z-index: 99999;
+  /* 가장 맨 위에 보이도록 설정 */
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.page-tab:hover {
+  transform: translateX(4px);
+}
+
+/* 세로 위치를 화면(Viewport) 상단 기준으로 칼같이 고정 */
+.profile-tab {
+  top: 180px !important;
+  background-color: #ffe5ec;
+  border-left-color: #ff758c;
+  color: #555;
+}
+
+.projects-tab {
+  top: 270px !important;
+  background-color: #e0fbfc;
+  border-left-color: #3dccc7;
+  color: #555;
+}
+
+.skills-tab {
+  top: 360px !important;
+  background-color: #fefae0;
+  border-left-color: #dda15e;
+  color: #555;
+}
+
+/* 앞표지 전체 스타일 */
+/* 1. 뒷표지와 완전히 똑같은 연한 핑크 톤으로 앞표지 색상 통일 */
+.front-cover {
+  background-color: #f7d6de !important;
+  /* 뒷표지와 맞춘 부드러운 핑크 색상 */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: inset 15px 0 30px rgba(0, 0, 0, 0.03);
+}
+
+/* 2. 표지 안쪽 콘텐츠 상자 (점선이 삐져나가지 않도록 설정) */
+.cover-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: calc(100% - 40px);
+  width: calc(100% - 40px);
+  margin: 20px;
+  border: 2px dashed rgba(120, 80, 90, 0.25);
+  /* 연한 핑크톤에 어울리는 은은한 점선 테두리 */
+  border-radius: 8px;
+  box-sizing: border-box;
+  position: relative;
+}
+
+/* 3. 가독성이  확 좋아지는 진한 글씨 색상 (다크 브라운/초코 톤) */
+.cover-main-title {
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 26px;
+  font-weight: bold;
+  color: #4a3b40;
+  /* 연한 핑크 배경에서 눈에 띄고 감성적인 진한 브라운 톤 */
+  text-align: center;
+  line-height: 1.3;
+  margin-bottom: 8px;
+}
+
+.cover-sub-title {
+  font-size: 12px;
+  color: #6b555d;
+  /* 서브 텍스트도 가독성 좋은 진한 톤으로 조정 */
+  letter-spacing: 2px;
+}
+
+.cover-footer {
+  position: absolute;
+  bottom: 25px;
+  font-size: 12px;
+  color: #6b555d;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+
+@keyframes bounce {
+
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-5px);
+  }
 }
